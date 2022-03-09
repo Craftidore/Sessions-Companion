@@ -17,7 +17,7 @@
         let characteristics = sessionsJSON.characteristics(charData);
         {
             character.brawn = characteristics.brawn;
-            character.ability = characteristics.ability;
+            character.agility = characteristics.agility;
             character.intellect = characteristics.intellect;
             character.cunning = characteristics.cunning;
             character.willpower = characteristics.willpower;
