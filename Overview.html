@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>RPGSessions Character Overview</title>
+        <style src="style.css"></style>
+        <script src="ajax-utils.js"></script>
+        <script src="constants.js"></script>
+        <script src="sessionsAPI.js"></script>
+        <script src="sessionsJSON.js"></script>
+        <script src="characters.js"></script>
+        <script src="main.js"></script>
+    </head>
+<body>
+    <div class="set-characters-menu">
+        <!-- 
+           Add GameTable or Character
+           Show list with char/gt ids (likely off to the side)
+           - also need some way of removing characters
+           I think run a http request on add
+        -->
+        <div>
+            <input id="GameTableLinkInput" type="text">
+            <button id="AddGameTable">Add GameTable Link</button>
+        </div>
+        <div>
+            <input id="CharacterLinkInput" type="text">
+            <button id="AddCharacter">Add Character Link</button>
+        </div>
+        <div>
+            <button id="UpdateOverview">Show Overview</button>
+        </div>
+    </div>
+</body>
+</html>
