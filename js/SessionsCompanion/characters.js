@@ -5,7 +5,6 @@
         let characterIndex = characterManager.characters.length;
         characterManager.characters.push({ });
         characterManager.characters[characterIndex] = characterManager.updateCharacter(character);
-        console.log(characterManager);
     }
     characterManager.updateCharacter = function (charData) {
         let character = { };

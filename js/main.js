@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", (event) => {
     document.getElementById("AddCharacter").addEventListener("click", addCharacter);
     document.getElementById("AddGameTable").addEventListener("click", addGameTable);
+    document.getElementById("UpdateOverview").addEventListener("click", updateOverview);
 });
 
 var addCharacter = function() {
@@ -13,4 +14,8 @@ var addGameTable = function() {
     var link = document.getElementById("GameTableLinkInput").value;
     sessionsAPI.addGameTable(link);
     document.getElementById("GameTableLinkInput").value = "";
+}
+
+var updateOverview = function() {
+    charDisplay.updateOverview();
 }
