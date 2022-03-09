@@ -3,5 +3,5 @@
     charDisplay.updateOverview = function() {
         console.log(characterManager.characters);
     }
-    window.charDisplay = charDisplay;
+    global.charDisplay = charDisplay;
 })(window);
