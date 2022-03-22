@@ -68,6 +68,7 @@
             arrayOfChars.forEach(character => {
                 characterManager.addCharacter(character);
             });
+            charDisplay.updateOverview();
         });
     }
     sessionsAPI.addCharacter = function (link) {
@@ -79,6 +80,7 @@
         $ajaxUtils.sendGetRequest(characterURL(id), (request) => {
             character = JSON.parse(request.response);
             characterManager.addCharacter(character);
+            charDisplay.updateOverview();
         });
     }
     gameTableURL = function (id) {

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="180" height="95" viewBox="0, 0, 180, 95">
+  <defs>
+    <linearGradient id="Gradient_1" gradientUnits="userSpaceOnUse" x1="90" y1="51" x2="179" y2="51">
+      <stop offset="0" stop-color="#0E588B"/>
+      <stop offset="0.3" stop-color="#155486"/>
+      <stop offset="0.7" stop-color="#204878"/>
+      <stop offset="0.98" stop-color="#253E6C"/>
+    </linearGradient>
+  </defs>
+  <g id="Layer_2">
+    <path d="M160,95 C160,95 180,79.9 180,51 C180,22.1 160,7 160,7 L20,7 C20,7 0,22.1 0,51 C0,79.9 20,95 20,95 z" fill="#F49503"/>
+    <path d="M159.22,94 C171.86,83.306 179.105,67.556 179,51 C179.105,34.444 171.86,18.694 159.22,8 L20.78,8 C8.14,18.694 0.895,34.444 1,51 C0.895,67.556 8.14,83.306 20.78,94 z" fill="#982B1F"/>
+    <path d="M159.22,8 L90,8 L90,94 L159.22,94 C171.86,83.306 179.105,67.556 179,51 C179.105,34.444 171.86,18.694 159.22,8 z" fill="url(#Gradient_1)"/>
+    <path d="M172,0 L8,0 L8,50 L35,74 L145,74 L172,50 L172,0 z" fill="#F49609"/>
+    <path d="M171,1 L9,1 L9,49.67 L35.67,73 L144.33,73 L171,49.67 L171,1 z" fill="#FFFFFF"/>
+    <path d="M169,3 L11,3 L11,20 L27.01,32 L152.99,32 L169,20 L169,3 z" fill="#F49609"/>
+    <path d="M168,4 L12,4 L12,19.86 L27.81,31 L152.19,31 L168,19.86 L168,4 z" fill="#982B1F"/>
+    <path d="M89,31.5 L91,31.5 L91,73.5 L89,73.5 z" fill="#F49606"/>
+  </g>
+</svg>

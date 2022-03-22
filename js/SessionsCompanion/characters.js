@@ -12,6 +12,7 @@
         let frontmatter = sessionsJSON.frontmatter(charData);
         {
             character.name = frontmatter.name;
+            character.id = frontmatter.id;
             character.archetype = frontmatter.archetype;
         }
         let characteristics = sessionsJSON.characteristics(charData);

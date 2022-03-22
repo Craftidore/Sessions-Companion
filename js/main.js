@@ -11,6 +11,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
         smartypants: false,
         xhtml: false
     });
+    if (location.hash === "#debug") {
+        console.log("Debugging");
+        sessionsAPI.addGameTable("https://app.rpgsessions.com/game/table/61e730ebf8a60e001103e800");
+    }
 });
 
 var addCharacter = function() {

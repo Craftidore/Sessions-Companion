@@ -1,53 +1,74 @@
 <div class="character">
     <div class="titlebar">
         <span class="name">
-            <span class="sectitle">Name</span>
-            <span class="filler">{{name}}</span>
+            <h2 class="filler">{{name}}</h2>
         </span>
         <span class="archetype">
-            <span class="sectitle">Archetype</span>
+            <span class="sectitle">Archetype:</span>
             <span class="filler">{{archetype}}</span>
         </span>
     </div>
     <div class="characteristics">
-        <div class="agility characteristics">
-            <span class="filler">{{agility}}</span>
-            <span class="sectitle">Agility</span>
+        <div class="characteristic-wrapper">
+            <div class="brawn characteristic">
+                <span class="filler">{{brawn}}</span>
+                <span class="sectitle">Brawn</span>
+            </div>
+            <div class="agility characteristic">
+                <span class="filler">{{agility}}</span>
+                <span class="sectitle">Agility</span>
+            </div>
+            <div class="intellect characteristic">
+                <span class="filler">{{intellect}}</span>
+                <span class="sectitle">Intellect</span>
+            </div>
         </div>
-        <div class="brawn characteristics">
-            <span class="filler">{{brawn}}</span>
-            <span class="sectitle">Brawn</span>
-        </div>
-        <div class="cunning characteristics">
-            <span class="filler">{{cunning}}</span>
-            <span class="sectitle">Cunning</span>
-        </div>
-        <div class="intellect characteristics">
-            <span class="filler">{{intellect}}</span>
-            <span class="sectitle">Intellect</span>
-        </div>
-        <div class="willpower characteristics">
-            <span class="filler">{{willpower}}</span>
-            <span class="sectitle">Willpower</span>
-        </div>
-        <div class="presence characteristics">
-            <span class="filler">{{presence}}</span>
-            <span class="sectitle">Presence</span>
+        <div class="characteristic-wrapper">
+            <div class="cunning characteristic">
+                <span class="filler">{{cunning}}</span>
+                <span class="sectitle">Cunning</span>
+            </div>
+            <div class="willpower characteristic">
+                <span class="filler">{{willpower}}</span>
+                <span class="sectitle">Willpower</span>
+            </div>
+            <div class="presence characteristic">
+                <span class="filler">{{presence}}</span>
+                <span class="sectitle">Presence</span>
+            </div>
         </div>
     </div>
     <div class="derived">
-        <div class="soak">{{soak}} Soak</div>
-        <div class="wounds">
-            <div class="woundthreshold">{{woundthreshold}} WT</div>
-            <div class="woundcurrent">{{woundcurrent}} WC</div>
+        <div class="derived-wrapper">
+            <div class="soak">
+                <div class="filler">
+                    {{soak}}
+                </div>
+                <div class="sectitle title">Soak</div>
+            </div>
+            <div class="defense">
+                <div class="sectitle title">Defense</div>
+                <div class="filler filler1">{{defenseranged}}</div>
+                <div class="sectitle subtitle1">Ranged</div>
+                <div class="filler filler2">{{defensemelee}}</div>
+                <div class="sectitle subtitle2">Melee</div>
+            </div>
         </div>
-        <div class="strain">
-            <div class="strainthreshold">{{strainthreshold}} ST</div>
-            <div class="straincurrent">{{straincurrent}} SC</div>
-        </div>
-        <div class="defense">
-            <div class="defenseranged">{{defenseranged}} RD</div>
-            <div class="defensemelee">{{defensemelee}} MD</div>
+        <div class="derived-wrapper">
+            <div class="wounds">
+                <div class="sectitle title">Wounds</div>
+                <div class="filler filler1">{{woundthreshold}}</div>
+                <div class="sectitle subtitle1">Threshold</div>
+                <div class="filler filler2">{{woundcurrent}}</div>
+                <div class="sectitle subtitle2">Current</div>
+            </div>
+            <div class="strain">
+                <div class="sectitle title">Strain</div>
+                <div class="filler filler1">{{strainthreshold}}</div>
+                <div class="sectitle subtitle1">Threshold</div>
+                <div class="filler filler2">{{straincurrent}}</div>
+                <div class="sectitle subtitle2">Current</div>
+            </div>
         </div>
     </div>
     <div class="motivations">{{motivations}}</div>
