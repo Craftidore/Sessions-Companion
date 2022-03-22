@@ -12,6 +12,7 @@
         let frontmatter = sessionsJSON.frontmatter(charData);
         {
             character.name = frontmatter.name;
+            character.id = frontmatter.id;
             character.archetype = frontmatter.archetype;
         }
         let characteristics = sessionsJSON.characteristics(charData);
@@ -43,10 +44,10 @@
             // it will let me change how it is stored in `character` without needing to change how 
             // it is stored in sessionsJSON. 
             character.motivation = { };
-            character.motivation.desire = motivation.desire;
-            character.motivation.fear = motivation.fear;
-            character.motivation.strength = motivation.strength;
-            character.motivation.flaw = motivation.flaw;
+            character.motivation.desire = marked.parse(motivation.desire);
+            character.motivation.fear = marked.parse(motivation.fear);
+            character.motivation.strength = marked.parse(motivation.strength);
+            character.motivation.flaw = marked.parse(motivation.flaw);
         } else 
         if (character.type === STARWARS) {
             // This means one to three motivations
@@ -60,6 +61,7 @@
 })(window);
 /*
 // UPDATE: 03-08-2022 I don't know why I have this commented code here. 
+// UPDATE: 03-11-2022 I think it specs out what the Character 'class'  
 Character:
 {
     "name":string
