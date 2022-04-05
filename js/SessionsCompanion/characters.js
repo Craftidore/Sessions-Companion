@@ -7,15 +7,26 @@
         characterManager.characters[characterIndex] = characterManager.updateCharacter(character);
     }
     characterManager.updateCharacter = function (charData) {
+        let logSuccess = function (name, successcodeObject) {
+            if (successcodeObject.successcode) {
+                console.log(name + " succeeds!");
+            }
+            else {
+                console.log(name + " fails");
+            }
+
+        }
         let character = { };
         character.type = sessionsJSON.characterType(charData);
         let frontmatter = sessionsJSON.frontmatter(charData);
+        logSuccess("Frontmatter", frontmatter);
         {
             character.name = frontmatter.name;
             character.id = frontmatter.id;
             character.archetype = frontmatter.archetype;
         }
         let characteristics = sessionsJSON.characteristics(charData);
+        logSuccess("Characteristics", characteristics);
         {
             character.brawn = characteristics.brawn;
             character.agility = characteristics.agility;
@@ -25,6 +36,7 @@
             character.presence = characteristics.presence;
         }
         let derived = sessionsJSON.derived(charData);
+        logSuccess("Derived", derived);
         {
             character.soak = derived.soak;
             character.rDefense = derived.rDefense;
@@ -43,11 +55,13 @@
             // I have decided to manually copy values like this because 
             // it will let me change how it is stored in `character` without needing to change how 
             // it is stored in sessionsJSON. 
+            logSuccess("Genesys Motivation", motivation);
+            console.log(motivation);
             character.motivation = { };
-            character.motivation.desire = marked.parse(motivation.desire);
-            character.motivation.fear = marked.parse(motivation.fear);
-            character.motivation.strength = marked.parse(motivation.strength);
-            character.motivation.flaw = marked.parse(motivation.flaw);
+            character.motivation.desire = marked.parse(motivation.motivation.desire);
+            character.motivation.fear = marked.parse(motivation.motivation.fear);
+            character.motivation.strength = marked.parse(motivation.motivation.strength);
+            character.motivation.flaw = marked.parse(motivation.motivation.flaw);
         } else 
         if (character.type === STARWARS) {
             // This means one to three motivations

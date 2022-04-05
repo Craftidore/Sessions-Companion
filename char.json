@@ -1,0 +1,1238 @@
+{
+  "_id": "60a4596e3b97812c3df80204",
+  "createdDate": "2021-05-14T22:27:37.351Z",
+  "modifiedDate": "2021-05-19T22:34:09.790Z",
+  "status": 1,
+  "name": "MY7H",
+  "lookupName": "my7h",
+  "image": "https://unbound-legends.imgix.net/character2/genesys-A-jjr.jpg?auto=format",
+  "notes": "",
+  "privateNotes": "",
+  "rulesSystem": "[rules] nds",
+  "characterType": "[character type] player",
+  "configuration": {
+    "diceTheme": "[dice theme] generic",
+    "gameTheme": "[game theme] generic",
+    "ndsCharacterType": "[nds character type] player",
+    "talentsDisplayType": "[nds character talent display type] pyramid",
+    "talentsSignatureAbilitiesEnabled": false,
+    "forcePowersDisplayType": "[nds character talent display type] list group",
+    "dutyEnabled": false,
+    "forceEnabled": false,
+    "forceDiceEnabled": false,
+    "moralityEnabled": false,
+    "obligationEnabled": false,
+    "superCharacteristicsEnabled": false,
+    "heroicAbilitiesEnabled": false,
+    "aemberEnabled": false,
+    "favorsEnabled": true,
+    "agendasEnabled": false,
+    "automations": false
+  },
+  "userFavorite": false,
+  "clonedCount": 0,
+  "clonedFromCharacterId": null,
+  "importData": null,
+  "options": {
+    "allowGMControl": false
+  },
+  "tempClone": false,
+  "userId": "5b7b3acccdb4e43ce69883dc",
+  "abilities": [],
+  "armor": [],
+  "attributes": [
+    {
+      "value": 0,
+      "type": "[nds character attribute] soak"
+    },
+    {
+      "value": 0,
+      "type": null
+    },
+    {
+      "value": 0,
+      "type": null
+    },
+    {
+      "value": 0,
+      "type": null
+    },
+    {
+      "value": 0,
+      "type": "[nds character attribute] wounds current"
+    },
+    {
+      "value": 0,
+      "type": "[nds character attribute] wounds threshold"
+    },
+    {
+      "value": -99,
+      "type": "[nds character attribute] strain current"
+    },
+    {
+      "value": 0,
+      "type": "[nds character attribute] strain threshold"
+    },
+    {
+      "value": 0,
+      "type": "[nds character attribute] defense ranged"
+    },
+    {
+      "value": 0,
+      "type": "[nds character attribute] defense melee"
+    },
+    {
+      "value": 0,
+      "type": "[nds character attribute] available xp"
+    },
+    {
+      "value": 0,
+      "type": "[nds character attribute] total xp"
+    },
+    {
+      "value": 0,
+      "type": "[nds character attribute] money"
+    },
+    {
+      "value": 0,
+      "type": null
+    },
+    {
+      "value": 0,
+      "type": "[nds character attribute] encumbrance current"
+    },
+    {
+      "value": 0,
+      "type": "[nds character attribute] encumbrance threshold"
+    },
+    {
+      "value": 0,
+      "type": null
+    },
+    {
+      "value": 0,
+      "type": null
+    },
+    {
+      "value": 0,
+      "type": null
+    },
+    {
+      "value": 0,
+      "type": "[nds character attribute] available heroic ability points"
+    },
+    {
+      "value": 0,
+      "type": "[nds character attribute] total heroic ability points"
+    },
+    {
+      "value": 1,
+      "type": "[nds character attribute] character count"
+    },
+    {
+      "value": 0,
+      "type": "[nds character attribute] current minion count"
+    },
+    {
+      "value": 0,
+      "type": "[nds character attribute] adversary level"
+    },
+    {
+      "value": 0,
+      "type": "[nds character attribute] combat power level"
+    },
+    {
+      "value": 0,
+      "type": "[nds character attribute] social power level"
+    },
+    {
+      "value": 0,
+      "type": "[nds character attribute] general power level"
+    },
+    {
+      "value": 0,
+      "type": "[nds character attribute] available aember"
+    },
+    {
+      "value": 0,
+      "type": "[nds character attribute] total aember"
+    }
+  ],
+  "characteristics": [
+    {
+      "value": 2,
+      "superCharacteristic": false,
+      "type": "[nds character characteristic] brawn"
+    },
+    {
+      "value": 2,
+      "superCharacteristic": false,
+      "type": "[nds character characteristic] agility"
+    },
+    {
+      "value": 2,
+      "superCharacteristic": false,
+      "type": "[nds character characteristic] intellect"
+    },
+    {
+      "value": 2,
+      "superCharacteristic": false,
+      "type": "[nds character characteristic] cunning"
+    },
+    {
+      "value": 2,
+      "superCharacteristic": false,
+      "type": "[nds character characteristic] willpower"
+    },
+    {
+      "value": 2,
+      "superCharacteristic": false,
+      "type": "[nds character characteristic] presence"
+    }
+  ],
+  "crits": [],
+  "details": [
+    {
+      "value": "",
+      "type": "[nds character detail] archetype"
+    },
+    {
+      "value": "",
+      "type": "[nds character detail] species"
+    },
+    {
+      "value": "",
+      "type": "[nds character detail] career"
+    },
+    {
+      "value": "",
+      "type": "[nds character detail] specialization"
+    },
+    {
+      "value": "",
+      "type": "[nds character detail] age"
+    },
+    {
+      "value": "",
+      "type": "[nds character detail] weight"
+    },
+    {
+      "value": "",
+      "type": "[nds character detail] height"
+    },
+    {
+      "value": "",
+      "type": "[nds character detail] notable features"
+    },
+    {
+      "value": "",
+      "type": "[nds character detail] background"
+    },
+    {
+      "value": "",
+      "type": "[nds character detail] motivation"
+    },
+    {
+      "value": "",
+      "type": "[nds character detail] desire"
+    },
+    {
+      "value": "",
+      "type": "[nds character detail] fear"
+    },
+    {
+      "value": "",
+      "type": "[nds character detail] strength"
+    },
+    {
+      "value": "",
+      "type": "[nds character detail] flaw"
+    }
+  ],
+  "duty": {
+    "contributionRanks": 0,
+    "duties": []
+  },
+  "equipment": [],
+  "favors": [],
+  "forcePowers": {
+    "talents": [],
+    "trees": [],
+    "listGroups": []
+  },
+  "heroicAbilities": [],
+  "modifiers": [],
+  "morality": {
+    "score": 0,
+    "sessionScore": 0,
+    "moralities": []
+  },
+  "obligation": {
+    "obligations": []
+  },
+  "skills": [
+    {
+      "id": "9c29795c-21a5-4483-b78e-eebee7774e88",
+      "name": "Athletics",
+      "lookupName": "athletics-7195",
+      "isCareer": false,
+      "ranks": 0,
+      "skillType": "[nds skill type] general",
+      "extraDice": [],
+      "linkedCharacteristic": "[nds character characteristic] brawn"
+    },
+    {
+      "id": "fd411617-d719-4a53-a2b7-15ceff954a91",
+      "name": "Brawl",
+      "lookupName": "brawl-6830",
+      "isCareer": false,
+      "ranks": 0,
+      "skillType": "[nds skill type] combat",
+      "extraDice": [],
+      "linkedCharacteristic": "[nds character characteristic] brawn"
+    },
+    {
+      "id": "233b4748-2409-4838-ba86-03f24f0a6717",
+      "name": "Charm",
+      "lookupName": "charm-5691",
+      "isCareer": false,
+      "ranks": 0,
+      "skillType": "[nds skill type] social",
+      "extraDice": [],
+      "linkedCharacteristic": "[nds character characteristic] presence"
+    },
+    {
+      "id": "136ef83e-edc5-41bb-b7f1-4fa5a1bc96e8",
+      "name": "Coercion",
+      "lookupName": "coercion-7573",
+      "isCareer": false,
+      "ranks": 0,
+      "skillType": "[nds skill type] social",
+      "extraDice": [],
+      "linkedCharacteristic": "[nds character characteristic] willpower"
+    },
+    {
+      "id": "1b7620b2-c795-4ec4-b180-aa456ee4f034",
+      "name": "Comp (Hacking)",
+      "lookupName": "comp-hacking-1513",
+      "isCareer": false,
+      "ranks": 0,
+      "skillType": "[nds skill type] general",
+      "extraDice": [],
+      "linkedCharacteristic": "[nds character characteristic] intellect"
+    },
+    {
+      "id": "0be12be1-0d32-46fa-89bd-09fcdfa0d006",
+      "name": "Comp (SysOps)",
+      "lookupName": "comp-sysops-2859",
+      "isCareer": false,
+      "ranks": 0,
+      "skillType": "[nds skill type] general",
+      "extraDice": [],
+      "linkedCharacteristic": "[nds character characteristic] intellect"
+    },
+    {
+      "id": "d16584b0-8509-4497-afb3-9396c6128c71",
+      "name": "Cool",
+      "lookupName": "cool-6732",
+      "isCareer": false,
+      "ranks": 0,
+      "skillType": "[nds skill type] general",
+      "extraDice": [],
+      "linkedCharacteristic": "[nds character characteristic] presence"
+    },
+    {
+      "id": "90b94d35-b61d-4262-9147-5479215ff42a",
+      "name": "Coordination",
+      "lookupName": "coordination-9314",
+      "isCareer": false,
+      "ranks": 0,
+      "skillType": "[nds skill type] general",
+      "extraDice": [],
+      "linkedCharacteristic": "[nds character characteristic] agility"
+    },
+    {
+      "id": "db0f9389-0465-4751-b760-60befcdc42be",
+      "name": "Deception",
+      "lookupName": "deception-8185",
+      "isCareer": false,
+      "ranks": 0,
+      "skillType": "[nds skill type] social",
+      "extraDice": [],
+      "linkedCharacteristic": "[nds character characteristic] cunning"
+    },
+    {
+      "id": "c8ba265f-2907-4098-9950-a3002f3743fc",
+      "name": "Discipline",
+      "lookupName": "discipline-9997",
+      "isCareer": false,
+      "ranks": 0,
+      "skillType": "[nds skill type] general",
+      "extraDice": [],
+      "linkedCharacteristic": "[nds character characteristic] willpower"
+    },
+    {
+      "id": "715408e4-cb18-4142-b1d9-69a35159b945",
+      "name": "Driving",
+      "lookupName": "driving-5285",
+      "isCareer": false,
+      "ranks": 0,
+      "skillType": "[nds skill type] general",
+      "extraDice": [],
+      "linkedCharacteristic": "[nds character characteristic] agility"
+    },
+    {
+      "id": "7994959f-4cfb-49f8-9191-89f2f69056f1",
+      "name": "Gunnery",
+      "lookupName": "gunnery-6933",
+      "isCareer": false,
+      "ranks": 0,
+      "skillType": "[nds skill type] combat",
+      "extraDice": [],
+      "linkedCharacteristic": "[nds character characteristic] agility"
+    },
+    {
+      "id": "434a2656-ac1e-419d-8d0c-b038a4ce27a2",
+      "name": "Leadership",
+      "lookupName": "leadership-1395",
+      "isCareer": false,
+      "ranks": 0,
+      "skillType": "[nds skill type] social",
+      "extraDice": [],
+      "linkedCharacteristic": "[nds character characteristic] presence"
+    },
+    {
+      "id": "fed3ddfc-76f0-4e15-81e2-da80485c48be",
+      "name": "Mechanics",
+      "lookupName": "mechanics-6133",
+      "isCareer": false,
+      "ranks": 0,
+      "skillType": "[nds skill type] general",
+      "extraDice": [],
+      "linkedCharacteristic": "[nds character characteristic] intellect"
+    },
+    {
+      "id": "0bb8a46a-3cdf-49ee-a08d-977ad07135f2",
+      "name": "Medicine",
+      "lookupName": "medicine-4760",
+      "isCareer": false,
+      "ranks": 0,
+      "skillType": "[nds skill type] general",
+      "extraDice": [],
+      "linkedCharacteristic": "[nds character characteristic] intellect"
+    },
+    {
+      "id": "489b949b-8586-4f02-a7a0-99c1000d6555",
+      "name": "Melee",
+      "lookupName": "melee-2629",
+      "isCareer": false,
+      "ranks": 0,
+      "skillType": "[nds skill type] combat",
+      "extraDice": [],
+      "linkedCharacteristic": "[nds character characteristic] brawn"
+    },
+    {
+      "id": "dbca3c69-e0c6-42d7-b259-1453d146c15f",
+      "name": "Negotiation",
+      "lookupName": "negotiation-4865",
+      "isCareer": false,
+      "ranks": 0,
+      "skillType": "[nds skill type] social",
+      "extraDice": [],
+      "linkedCharacteristic": "[nds character characteristic] presence"
+    },
+    {
+      "id": "f87d2139-3acd-444e-acd4-3ff42ff65648",
+      "name": "Operating",
+      "lookupName": "operating-8366",
+      "isCareer": false,
+      "ranks": 0,
+      "skillType": "[nds skill type] general",
+      "extraDice": [],
+      "linkedCharacteristic": "[nds character characteristic] intellect"
+    },
+    {
+      "id": "fa10f074-7a40-495e-9176-4dfc75e16d09",
+      "name": "Perception",
+      "lookupName": "perception-8081",
+      "isCareer": false,
+      "ranks": 0,
+      "skillType": "[nds skill type] general",
+      "extraDice": [],
+      "linkedCharacteristic": "[nds character characteristic] cunning"
+    },
+    {
+      "id": "5bd92a36-c114-412b-818d-1efee47d00e8",
+      "name": "Piloting",
+      "lookupName": "piloting-3581",
+      "isCareer": false,
+      "ranks": 0,
+      "skillType": "[nds skill type] general",
+      "extraDice": [],
+      "linkedCharacteristic": "[nds character characteristic] agility"
+    },
+    {
+      "id": "452403c2-2f6e-4753-bf8c-1e851c5d3894",
+      "name": "Ranged-Heavy",
+      "lookupName": "ranged-heavy-5069",
+      "isCareer": false,
+      "ranks": 0,
+      "skillType": "[nds skill type] combat",
+      "extraDice": [],
+      "linkedCharacteristic": "[nds character characteristic] agility"
+    },
+    {
+      "id": "077ebe08-182e-4af2-b7cc-f58a639f9380",
+      "name": "Ranged-Light",
+      "lookupName": "ranged-light-3729",
+      "isCareer": false,
+      "ranks": 2,
+      "skillType": "[nds skill type] combat",
+      "extraDice": [],
+      "linkedCharacteristic": "[nds character characteristic] agility"
+    },
+    {
+      "id": "359f944f-a83b-49a2-aac9-836a574c5ee3",
+      "name": "Resilience",
+      "lookupName": "resilience-3785",
+      "isCareer": false,
+      "ranks": 0,
+      "skillType": "[nds skill type] general",
+      "extraDice": [],
+      "linkedCharacteristic": "[nds character characteristic] brawn"
+    },
+    {
+      "id": "ebf92fc6-be78-4d3d-a2ee-713d96dafaf2",
+      "name": "Science",
+      "lookupName": "science-5493",
+      "isCareer": false,
+      "ranks": 0,
+      "skillType": "[nds skill type] knowledge",
+      "extraDice": [],
+      "linkedCharacteristic": "[nds character characteristic] intellect"
+    },
+    {
+      "id": "ad62aab5-5c48-4c8b-a681-a59109c37f5a",
+      "name": "Skulduggery",
+      "lookupName": "skulduggery-3795",
+      "isCareer": false,
+      "ranks": 0,
+      "skillType": "[nds skill type] general",
+      "extraDice": [],
+      "linkedCharacteristic": "[nds character characteristic] cunning"
+    },
+    {
+      "id": "0e0d9b78-b1dc-4042-8c91-b57000e28775",
+      "name": "Society",
+      "lookupName": "society-3917",
+      "isCareer": false,
+      "ranks": 0,
+      "skillType": "[nds skill type] knowledge",
+      "extraDice": [],
+      "linkedCharacteristic": "[nds character characteristic] intellect"
+    },
+    {
+      "id": "9db2d437-10cb-4d91-98d8-704b501fe543",
+      "name": "Stealth",
+      "lookupName": "stealth-4760",
+      "isCareer": false,
+      "ranks": 0,
+      "skillType": "[nds skill type] general",
+      "extraDice": [],
+      "linkedCharacteristic": "[nds character characteristic] agility"
+    },
+    {
+      "id": "d805c7b9-b9e9-4e74-a46c-8747d74882d3",
+      "name": "Streetwise",
+      "lookupName": "streetwise-9977",
+      "isCareer": false,
+      "ranks": 0,
+      "skillType": "[nds skill type] general",
+      "extraDice": [],
+      "linkedCharacteristic": "[nds character characteristic] cunning"
+    },
+    {
+      "id": "b0aaf427-9784-4ac9-aa40-30b989a1541d",
+      "name": "Survival",
+      "lookupName": "survival-6712",
+      "isCareer": false,
+      "ranks": 0,
+      "skillType": "[nds skill type] general",
+      "extraDice": [],
+      "linkedCharacteristic": "[nds character characteristic] cunning"
+    },
+    {
+      "id": "7378f269-4a78-4315-ada0-7c7e8c8f801f",
+      "name": "The Net",
+      "lookupName": "the-net-8241",
+      "isCareer": false,
+      "ranks": 0,
+      "skillType": "[nds skill type] knowledge",
+      "extraDice": [],
+      "linkedCharacteristic": "[nds character characteristic] intellect"
+    },
+    {
+      "id": "6a647372-a0c4-4d8e-b843-e5730a91673f",
+      "name": "Vigilance",
+      "lookupName": "vigilance-8760",
+      "isCareer": false,
+      "ranks": 0,
+      "skillType": "[nds skill type] general",
+      "extraDice": [],
+      "linkedCharacteristic": "[nds character characteristic] willpower"
+    }
+  ],
+  "talents": {
+    "talents": [],
+    "trees": [],
+    "listGroups": [],
+    "pyramidPositionManager": {
+      "_nodesByLinkedId": {},
+      "_nodeRefsFlattened": [
+        {
+          "id": "ef478ef7-2a4d-4284-bbd2-f3ec0675a81d",
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "span": 1,
+          "linkedId": "",
+          "hidden": false
+        },
+        {
+          "id": "6bf13036-6ce2-486c-9813-ff53631c02f4",
+          "position": {
+            "x": 1,
+            "y": 0
+          },
+          "span": 1,
+          "linkedId": "",
+          "hidden": true
+        },
+        {
+          "id": "9466e4af-d486-427c-81c6-da556e25e99a",
+          "position": {
+            "x": 2,
+            "y": 0
+          },
+          "span": 1,
+          "linkedId": "",
+          "hidden": true
+        },
+        {
+          "id": "d0089a01-145e-4c36-a683-cf1a59d965f5",
+          "position": {
+            "x": 3,
+            "y": 0
+          },
+          "span": 1,
+          "linkedId": "",
+          "hidden": true
+        },
+        {
+          "id": "b1866a02-9137-46c6-946f-a9cc8f09dd21",
+          "position": {
+            "x": 4,
+            "y": 0
+          },
+          "span": 1,
+          "linkedId": "",
+          "hidden": true
+        },
+        {
+          "id": "f91112c8-7536-4e61-b20f-e44d630dfe9f",
+          "position": {
+            "x": 0,
+            "y": 1
+          },
+          "span": 1,
+          "linkedId": "",
+          "hidden": false
+        },
+        {
+          "id": "82f0e645-7df5-4324-84a6-59b41eb87571",
+          "position": {
+            "x": 1,
+            "y": 1
+          },
+          "span": 1,
+          "linkedId": "",
+          "hidden": false
+        },
+        {
+          "id": "b2d3f0d5-10ad-4d2a-9028-5123a0fd5572",
+          "position": {
+            "x": 2,
+            "y": 1
+          },
+          "span": 1,
+          "linkedId": "",
+          "hidden": true
+        },
+        {
+          "id": "5961bc0e-700e-47ec-a1c9-f8b036cfdd5c",
+          "position": {
+            "x": 3,
+            "y": 1
+          },
+          "span": 1,
+          "linkedId": "",
+          "hidden": true
+        },
+        {
+          "id": "0fec01d6-9254-46b9-a42c-98c083ae2c10",
+          "position": {
+            "x": 4,
+            "y": 1
+          },
+          "span": 1,
+          "linkedId": "",
+          "hidden": true
+        },
+        {
+          "id": "c29d8d30-875f-4947-9324-726af445aa5a",
+          "position": {
+            "x": 0,
+            "y": 2
+          },
+          "span": 1,
+          "linkedId": "",
+          "hidden": false
+        },
+        {
+          "id": "a5641881-0395-47c8-bb77-0b08a44e5f0a",
+          "position": {
+            "x": 1,
+            "y": 2
+          },
+          "span": 1,
+          "linkedId": "",
+          "hidden": false
+        },
+        {
+          "id": "5cbb1859-9903-4bef-b45b-dfa72b111304",
+          "position": {
+            "x": 2,
+            "y": 2
+          },
+          "span": 1,
+          "linkedId": "",
+          "hidden": false
+        },
+        {
+          "id": "9e5c6466-21bf-422e-a0cb-1f13675924ed",
+          "position": {
+            "x": 3,
+            "y": 2
+          },
+          "span": 1,
+          "linkedId": "",
+          "hidden": true
+        },
+        {
+          "id": "32884a0c-66f4-4dd9-8048-f9549deef489",
+          "position": {
+            "x": 4,
+            "y": 2
+          },
+          "span": 1,
+          "linkedId": "",
+          "hidden": true
+        },
+        {
+          "id": "98abc5ff-9a23-4f7c-a575-a71b757947cd",
+          "position": {
+            "x": 0,
+            "y": 3
+          },
+          "span": 1,
+          "linkedId": "",
+          "hidden": false
+        },
+        {
+          "id": "87d54800-ce0a-47ee-aa8e-c6224945a69f",
+          "position": {
+            "x": 1,
+            "y": 3
+          },
+          "span": 1,
+          "linkedId": "",
+          "hidden": false
+        },
+        {
+          "id": "5c93c36d-6c5f-450d-bfed-8a1d901f4617",
+          "position": {
+            "x": 2,
+            "y": 3
+          },
+          "span": 1,
+          "linkedId": "",
+          "hidden": false
+        },
+        {
+          "id": "a5a6c42f-5d4e-4baf-a224-89220f13f48e",
+          "position": {
+            "x": 3,
+            "y": 3
+          },
+          "span": 1,
+          "linkedId": "",
+          "hidden": false
+        },
+        {
+          "id": "0115e24f-bc1a-4d2d-9a7f-4e9f02bda46c",
+          "position": {
+            "x": 4,
+            "y": 3
+          },
+          "span": 1,
+          "linkedId": "",
+          "hidden": true
+        },
+        {
+          "id": "bb2c406e-a616-4962-9b95-92857cd03fd8",
+          "position": {
+            "x": 0,
+            "y": 4
+          },
+          "span": 1,
+          "linkedId": "",
+          "hidden": false
+        },
+        {
+          "id": "2f496c6d-fa9c-41b1-bea8-0d2b2a298fd5",
+          "position": {
+            "x": 1,
+            "y": 4
+          },
+          "span": 1,
+          "linkedId": "",
+          "hidden": false
+        },
+        {
+          "id": "a7bc5c96-6be4-4261-9749-7fddb11a0956",
+          "position": {
+            "x": 2,
+            "y": 4
+          },
+          "span": 1,
+          "linkedId": "",
+          "hidden": false
+        },
+        {
+          "id": "50c30e49-236c-4502-8208-2d9d884fe478",
+          "position": {
+            "x": 3,
+            "y": 4
+          },
+          "span": 1,
+          "linkedId": "",
+          "hidden": false
+        },
+        {
+          "id": "f1a732e4-32de-4506-9dae-d678b3b4ed6b",
+          "position": {
+            "x": 4,
+            "y": 4
+          },
+          "span": 1,
+          "linkedId": "",
+          "hidden": false
+        }
+      ],
+      "_nodeRefs": [
+        [
+          {
+            "id": "ef478ef7-2a4d-4284-bbd2-f3ec0675a81d",
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "span": 1,
+            "linkedId": "",
+            "hidden": false
+          },
+          {
+            "id": "6bf13036-6ce2-486c-9813-ff53631c02f4",
+            "position": {
+              "x": 1,
+              "y": 0
+            },
+            "span": 1,
+            "linkedId": "",
+            "hidden": true
+          },
+          {
+            "id": "9466e4af-d486-427c-81c6-da556e25e99a",
+            "position": {
+              "x": 2,
+              "y": 0
+            },
+            "span": 1,
+            "linkedId": "",
+            "hidden": true
+          },
+          {
+            "id": "d0089a01-145e-4c36-a683-cf1a59d965f5",
+            "position": {
+              "x": 3,
+              "y": 0
+            },
+            "span": 1,
+            "linkedId": "",
+            "hidden": true
+          },
+          {
+            "id": "b1866a02-9137-46c6-946f-a9cc8f09dd21",
+            "position": {
+              "x": 4,
+              "y": 0
+            },
+            "span": 1,
+            "linkedId": "",
+            "hidden": true
+          }
+        ],
+        [
+          {
+            "id": "f91112c8-7536-4e61-b20f-e44d630dfe9f",
+            "position": {
+              "x": 0,
+              "y": 1
+            },
+            "span": 1,
+            "linkedId": "",
+            "hidden": false
+          },
+          {
+            "id": "82f0e645-7df5-4324-84a6-59b41eb87571",
+            "position": {
+              "x": 1,
+              "y": 1
+            },
+            "span": 1,
+            "linkedId": "",
+            "hidden": false
+          },
+          {
+            "id": "b2d3f0d5-10ad-4d2a-9028-5123a0fd5572",
+            "position": {
+              "x": 2,
+              "y": 1
+            },
+            "span": 1,
+            "linkedId": "",
+            "hidden": true
+          },
+          {
+            "id": "5961bc0e-700e-47ec-a1c9-f8b036cfdd5c",
+            "position": {
+              "x": 3,
+              "y": 1
+            },
+            "span": 1,
+            "linkedId": "",
+            "hidden": true
+          },
+          {
+            "id": "0fec01d6-9254-46b9-a42c-98c083ae2c10",
+            "position": {
+              "x": 4,
+              "y": 1
+            },
+            "span": 1,
+            "linkedId": "",
+            "hidden": true
+          }
+        ],
+        [
+          {
+            "id": "c29d8d30-875f-4947-9324-726af445aa5a",
+            "position": {
+              "x": 0,
+              "y": 2
+            },
+            "span": 1,
+            "linkedId": "",
+            "hidden": false
+          },
+          {
+            "id": "a5641881-0395-47c8-bb77-0b08a44e5f0a",
+            "position": {
+              "x": 1,
+              "y": 2
+            },
+            "span": 1,
+            "linkedId": "",
+            "hidden": false
+          },
+          {
+            "id": "5cbb1859-9903-4bef-b45b-dfa72b111304",
+            "position": {
+              "x": 2,
+              "y": 2
+            },
+            "span": 1,
+            "linkedId": "",
+            "hidden": false
+          },
+          {
+            "id": "9e5c6466-21bf-422e-a0cb-1f13675924ed",
+            "position": {
+              "x": 3,
+              "y": 2
+            },
+            "span": 1,
+            "linkedId": "",
+            "hidden": true
+          },
+          {
+            "id": "32884a0c-66f4-4dd9-8048-f9549deef489",
+            "position": {
+              "x": 4,
+              "y": 2
+            },
+            "span": 1,
+            "linkedId": "",
+            "hidden": true
+          }
+        ],
+        [
+          {
+            "id": "98abc5ff-9a23-4f7c-a575-a71b757947cd",
+            "position": {
+              "x": 0,
+              "y": 3
+            },
+            "span": 1,
+            "linkedId": "",
+            "hidden": false
+          },
+          {
+            "id": "87d54800-ce0a-47ee-aa8e-c6224945a69f",
+            "position": {
+              "x": 1,
+              "y": 3
+            },
+            "span": 1,
+            "linkedId": "",
+            "hidden": false
+          },
+          {
+            "id": "5c93c36d-6c5f-450d-bfed-8a1d901f4617",
+            "position": {
+              "x": 2,
+              "y": 3
+            },
+            "span": 1,
+            "linkedId": "",
+            "hidden": false
+          },
+          {
+            "id": "a5a6c42f-5d4e-4baf-a224-89220f13f48e",
+            "position": {
+              "x": 3,
+              "y": 3
+            },
+            "span": 1,
+            "linkedId": "",
+            "hidden": false
+          },
+          {
+            "id": "0115e24f-bc1a-4d2d-9a7f-4e9f02bda46c",
+            "position": {
+              "x": 4,
+              "y": 3
+            },
+            "span": 1,
+            "linkedId": "",
+            "hidden": true
+          }
+        ],
+        [
+          {
+            "id": "bb2c406e-a616-4962-9b95-92857cd03fd8",
+            "position": {
+              "x": 0,
+              "y": 4
+            },
+            "span": 1,
+            "linkedId": "",
+            "hidden": false
+          },
+          {
+            "id": "2f496c6d-fa9c-41b1-bea8-0d2b2a298fd5",
+            "position": {
+              "x": 1,
+              "y": 4
+            },
+            "span": 1,
+            "linkedId": "",
+            "hidden": false
+          },
+          {
+            "id": "a7bc5c96-6be4-4261-9749-7fddb11a0956",
+            "position": {
+              "x": 2,
+              "y": 4
+            },
+            "span": 1,
+            "linkedId": "",
+            "hidden": false
+          },
+          {
+            "id": "50c30e49-236c-4502-8208-2d9d884fe478",
+            "position": {
+              "x": 3,
+              "y": 4
+            },
+            "span": 1,
+            "linkedId": "",
+            "hidden": false
+          },
+          {
+            "id": "f1a732e4-32de-4506-9dae-d678b3b4ed6b",
+            "position": {
+              "x": 4,
+              "y": 4
+            },
+            "span": 1,
+            "linkedId": "",
+            "hidden": false
+          }
+        ]
+      ],
+      "width": 5,
+      "height": 5,
+      "nodes": [
+        {
+          "id": "6bf13036-6ce2-486c-9813-ff53631c02f4",
+          "position": {
+            "x": 1,
+            "y": 0
+          },
+          "span": 1,
+          "linkedId": "",
+          "hidden": true
+        },
+        {
+          "id": "9466e4af-d486-427c-81c6-da556e25e99a",
+          "position": {
+            "x": 2,
+            "y": 0
+          },
+          "span": 1,
+          "linkedId": "",
+          "hidden": true
+        },
+        {
+          "id": "d0089a01-145e-4c36-a683-cf1a59d965f5",
+          "position": {
+            "x": 3,
+            "y": 0
+          },
+          "span": 1,
+          "linkedId": "",
+          "hidden": true
+        },
+        {
+          "id": "b1866a02-9137-46c6-946f-a9cc8f09dd21",
+          "position": {
+            "x": 4,
+            "y": 0
+          },
+          "span": 1,
+          "linkedId": "",
+          "hidden": true
+        },
+        {
+          "id": "b2d3f0d5-10ad-4d2a-9028-5123a0fd5572",
+          "position": {
+            "x": 2,
+            "y": 1
+          },
+          "span": 1,
+          "linkedId": "",
+          "hidden": true
+        },
+        {
+          "id": "5961bc0e-700e-47ec-a1c9-f8b036cfdd5c",
+          "position": {
+            "x": 3,
+            "y": 1
+          },
+          "span": 1,
+          "linkedId": "",
+          "hidden": true
+        },
+        {
+          "id": "0fec01d6-9254-46b9-a42c-98c083ae2c10",
+          "position": {
+            "x": 4,
+            "y": 1
+          },
+          "span": 1,
+          "linkedId": "",
+          "hidden": true
+        },
+        {
+          "id": "9e5c6466-21bf-422e-a0cb-1f13675924ed",
+          "position": {
+            "x": 3,
+            "y": 2
+          },
+          "span": 1,
+          "linkedId": "",
+          "hidden": true
+        },
+        {
+          "id": "32884a0c-66f4-4dd9-8048-f9549deef489",
+          "position": {
+            "x": 4,
+            "y": 2
+          },
+          "span": 1,
+          "linkedId": "",
+          "hidden": true
+        },
+        {
+          "id": "0115e24f-bc1a-4d2d-9a7f-4e9f02bda46c",
+          "position": {
+            "x": 4,
+            "y": 3
+          },
+          "span": 1,
+          "linkedId": "",
+          "hidden": true
+        }
+      ],
+      "_highestX": 4,
+      "_highestY": 3
+    }
+  },
+  "weapons": [
+    {
+      "id": "79140ca8-2d3c-4ac8-ab2b-4a48c947039f",
+      "name": "Pistol",
+      "lookupName": "pistol-2956",
+      "linkedSkillId": "077ebe08-182e-4af2-b7cc-f58a639f9380",
+      "baseDamage": 5,
+      "damageAddsBrawn": false,
+      "critRating": 2,
+      "range": "[nds character range band] medium",
+      "encumbrance": 0,
+      "carrying": true,
+      "hardPoints": 0,
+      "rarity": 0,
+      "restricted": false,
+      "cost": "",
+      "equipped": true,
+      "modifiers": [],
+      "attachments": [],
+      "extraDice": [
+        "NDSBoost"
+      ],
+      "description": ""
+    }
+  ]
+}
