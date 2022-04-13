@@ -20,8 +20,10 @@
         // in any case, removing any spare slashes, just in case there was a trailing slash
         let charactergen = /^https:\/\/app\.rpgsessions\.com\/char\/ffg-gen\/player\//ig;
         let charactersw = /^https:\/\/app\.rpgsessions\.com\/char\/ffg-sw\/player\//ig;
+        let characternds = /^https:\/\/app\.rpgsessions\.com\/char\/nds\/player\//ig;
         let characterfromtable = /^https:\/\/app\.rpgsessions\.com\/char\//ig;
-        let characterfromapi = /^https:\/\/api\.rpgsessions\.com\/character2\//ig;
+        let characterfromoldapi = /^https:\/\/api\.rpgsessions\.com\/character2\//ig;
+        let characterfromapi = /^https:\/\/api\.rpgsessions\.com\/character\//ig;
         let table = /^https\:\/\/app\.rpgsessions\.com\/game\/table\//ig;
         let hexLength24 = /^[a-fA-F0-9]{24}$/g;
         console.log(link);
@@ -37,9 +39,17 @@
             console.log("sw exec");
             return noSlashes(link.replace(charactersw, ""));
         } else
+        if (characternds.exec(link)) {
+            console.log("nds exec");
+            return noSlashes(link.replace(characternds, ""));
+        } else
         if (characterfromtable.exec(link)) {
             console.log("from table exec");
             return noSlashes(link.replace(characterfromtable, ""));
+        } else
+        if (characterfromoldapi.exec(link)) {
+            console.log("from old api");
+            return noSlashes(link.replace(characterfromoldapi, ""));
         } else
         if (characterfromapi.exec(link)) {
             console.log("from api");
@@ -96,7 +106,7 @@
     }
     */
     characterURL = function (id) {
-        return "https://api.rpgsessions.com/character2/" + id;
+        return "https://api.rpgsessions.com/character/" + id;
     }
     global.sessionsAPI = sessionsAPI;
 })(window);

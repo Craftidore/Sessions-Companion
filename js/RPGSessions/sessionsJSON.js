@@ -23,23 +23,24 @@
     }
     */
     sessionsJSON.characterType = function (character) {
-        if ("[gameType] ffg genesys" === character.gameType) {
+        return GENESYS;
+        if (/^[game theme] genesys/.exec(character.configuration.gameTheme)) {
             return GENESYS;
         } else
-        if ("[gameType] ffg star wars" === character.gameType) {
+        if (/^[game theme] star wars/.exec(character.configuration.gameTheme)) {
             return STARWARS;
         } else {
             console.log("Invalid Game Type");
             return "None";
         }
     }
+
     let characterType = sessionsJSON.characterType;
     success = function (object) {
         object.successcode = 1;
         return object;
     }
     successIf = function(object) {
-
         // success if not already a failure. 
         if ('successcode' in object) {
             if (!object.successcode === 0) {
@@ -61,9 +62,25 @@
         }
         return failure(succeeds);
     }
-    sessionsJSON.frontmatter = function (character) {
-        let returnFrontmatter = success({ });
+    sessionsJSON.modifiers = function (character){
+        returnModifier = success({
+            soak:0,
+            tWounds:0,
+            cWounds:0,
+            tStrain:0,
+            cStrain:0,
+            defense:0,
+            mDefense:0,
+            rDefense:0,
+            brawn:0,
+            agility:0,
+            intellect:0,
+            cunning:0,
+            willpower:0,
+            presence:0
+        });
         try {
+<<<<<<< HEAD
             if (characterType(character) === GENESYS) {
                 returnFrontmatter.name = character.name;
                 returnFrontmatter.id = character._id;
@@ -78,49 +95,162 @@
                 returnFrontmatter.archetype = findInArray(character.details, "[gen character detail] archetype", returnFrontmatter).value;
                 if (returnFrontmatter.name === undefined) {// Code removed because then failure(returnFrontmatter) would be applied already // || returnFrontmatter.successcode === 0) {
                     failure(returnFrontmatter);
+=======
+            let modifiers = new Array();
+            // check if automod
+            automod = character.configuration.automations;
+            // set list to mods
+            modifiers = character.modifiers;
+            // for armor
+            character.armor.forEach((armor) => {
+                // { if equiped, (for armor mods, add to list) (for soak/defense, if automod, add to soak mod) }
+                if (armor.equipped) {
+                    armor.modifiers.forEach((armormod) => {
+                        modifiers.concat(armormod);
+                    });
+                    if (automod) {
+                        // If multiple armors are equipped, only one soak should apply.
+                        // And that soak should be the higher one, hence the ? :
+                        returnModifier.soak = returnModifier.soak < armor.soak ? armor.soak : returnModifier.soak;
+                        returnModifier.defense = returnModifier.defense < armor.defense ? armor.defense : returnModifier.defense;
+                    }
                 }
-            }
-            return returnFrontmatter;
+            });
+            // for weapon
+            character.weapons.forEach((weapon) => {
+                // {if equiped, (for weapon mods, add to list) }
+                if (weapon.equipped) {
+                    weapon.modifiers.forEach((weaponmod) => {
+                        modifiers.concat(weaponmod);
+                    });
+>>>>>>> Modifiers
+                }
+            });
+            // for equipment
+            character.equipment.forEach((item) => {
+                // {if carried, (for item mods, add to list)}
+                if (item.carrying) {
+                    item.modifiers.forEach((itemmod) => {
+                        modifiers.concat(itemmod);
+                    });
+                }
+            });
+            // for talents
+            character.talents.talents.forEach((talent) => {
+                if (talent.purchased) {
+                    talent.modifiers.forEach((talentmod) => {
+                        modifiers.concat(talentmod);
+                    });
+                }
+            });
+            // run through list
+            modifiers.forEach((modifier) => {
+                switch (modifier.type) {
+                    case "[nds character modifier type] narrative":
+                        //do nothing
+                        break;
+                    case "[nds character modifier type] attribute":
+                        //test for which attribute
+                        switch (modifier.attribute) {
+                            case "[nds character attribute] soak":
+                                returnModifier.soak += modifier.modifierAmount;
+                                break;
+                            case "[nds character attribute] wounds current":
+                                returnModifier.cWounds += modifier.modifierAmount;
+                                break;
+                            case "[nds character attribute] wounds threshold":
+                                returnModifier.tWounds += modifier.modifierAmount;
+                                break;
+                            case "[nds character attribute] strain current":
+                                returnModifier.cStrain += modifier.modifierAmount;
+                                break;
+                            case "[nds character attribute] strain threshold":
+                                returnModifier.tStrain += modifier.modifierAmount;
+                                break;
+                            case "[nds character attribute] defense melee":
+                                returnModifier.mDefense += modifier.modifierAmount;
+                                break;
+                            case "[nds character attribute] defense ranged":
+                                returnModifier.rDefense += modifier.modifierAmount;
+                                break;
+                        }
+                        break;
+                    case "[nds character modifier type] characteristic":
+                        switch (modifier.characteristic){
+                            case "[nds character characteristic] brawn":
+                                returnModifier.brawn += modifier.modifierAmount;
+                                break;
+                            case "[nds character characteristic] agility":
+                                returnModifier.agility += modifier.modifierAmount;
+                                break;
+                            case "[nds character characteristic] cunning":
+                                returnModifier.cunning += modifier.modifierAmount;
+                                break;
+                            case "[nds character characteristic] intellect":
+                                returnModifier.intellect += modifier.modifierAmount;
+                                break;
+                            case "[nds character characteristic] willpower":
+                                returnModifier.willpower += modifier.modifierAmount;
+                                break;
+                            case "[nds character characteristic] presence":
+                                returnModifier.presence += modifier.modifierAmount;
+                                break;
+                        }
+                        break;
+                    case "[nds character modifier type] skill":
+                        //do nothing
+                        break;
+                    case "[nds character modifier type] weapon":
+                        //do nothing
+                        break;
+                }
+            });
+            return returnModifier;
         }
         catch (error) {
             console.log(error);
             return failure({ });
         }
     }
-    sessionsJSON.characteristics = function (character) {
+    sessionsJSON.frontmatter = function (character) {// UPDATED
+        let returnFrontmatter = success({ });
+        try {
+            succeeds = { successcode:1 };
+            returnFrontmatter.id = character._id; 
+            returnFrontmatter.name = character.name;
+            returnFrontmatter.archetype = findInArray(character.details, "[nds character detail] archetype", succeeds).value;
+            if (succeeds.successcode === 0) {
+                returnFrontmatter.successcode = 0;
+            }
+            return returnFrontmatter;
+        }
+        catch (error) {
+            console.log("Frontmatter Error:");
+            console.log(error);
+            return failure({ });
+        }
+    }
+    sessionsJSON.characteristics = function (character) {// UPDATED
         let characteristics = character.characteristics;
         let returnCharacteristics = { };
         let succeeds = { };
         try {
             let check = function (characteristic, stringToMatch) {
                 if (characteristic.type === stringToMatch) {
-                    //console.log(succeeds);
                     succeeds = successIf(succeeds);
                 } else {
                     succeeds = failure(succeeds);
                 }
                 return characteristic.value;
             }
-            if (characterType(character) === GENESYS) {
-                //the code below assumes that characteristics follow the order of BR, AG, INT, CUN, WILL, PRE
-                //Failure to follow this order will result in a failure successcode
-                returnCharacteristics.brawn = check(characteristics[0], "[gen character characteristic] brawn");
-                returnCharacteristics.agility = check(characteristics[1], "[gen character characteristic] agility");
-                returnCharacteristics.intellect = check(characteristics[2], "[gen character characteristic] intellect");
-                returnCharacteristics.cunning = check(characteristics[3], "[gen character characteristic] cunning");
-                returnCharacteristics.willpower = check(characteristics[4], "[gen character characteristic] willpower");
-                returnCharacteristics.presence = check(characteristics[5], "[gen character characteristic] presence");
-            } else 
-            if (characterType(character) === STARWARS) {
-                //the code below assumes that characteristics follow the order of BR, AG, INT, CUN, WILL, PRE
-                //Failure to follow this order will result in a failure successcode
-                returnCharacteristics.brawn = check(characteristics[0], "[sw character characteristic] brawn");
-                returnCharacteristics.agility = check(characteristics[1], "[sw character characteristic] agility");
-                returnCharacteristics.intellect = check(characteristics[2], "[sw character characteristic] intellect");
-                returnCharacteristics.cunning = check(characteristics[3], "[sw character characteristic] cunning");
-                returnCharacteristics.willpower = check(characteristics[4], "[sw character characteristic] willpower");
-                returnCharacteristics.presence = check(characteristics[5], "[sw character characteristic] presence");
-            }
+            //the code below assumes that characteristics follow the order of BR, AG, INT, CUN, WILL, PRE
+            //Failure to follow this order will result in a failure successcode
+            returnCharacteristics.brawn = check(characteristics[0], "[nds character characteristic] brawn");
+            returnCharacteristics.agility = check(characteristics[1], "[nds character characteristic] agility");
+            returnCharacteristics.intellect = check(characteristics[2], "[nds character characteristic] intellect");
+            returnCharacteristics.cunning = check(characteristics[3], "[nds character characteristic] cunning");
+            returnCharacteristics.willpower = check(characteristics[4], "[nds character characteristic] willpower");
+            returnCharacteristics.presence = check(characteristics[5], "[nds character characteristic] presence");
             if (succeeds === 0) {
                 return failure(returnCharacteristics);
             }
@@ -131,38 +261,91 @@
             return failure({ });
         }
     }
-    sessionsJSON.derived = function (character) {
+    sessionsJSON.derived = function (character) {// UPDATED
         let attributes = character.attributes;
         let returnAttributes = { };
         let succeeds = { };
-        if (characterType(character) === GENESYS) {
-            returnAttributes.soak = findInArray(attributes, "[gen character attribute] soak", succeeds).value;
-            returnAttributes.rDefense = findInArray(attributes, "[gen character attribute] defense ranged", succeeds).value;
-            returnAttributes.mDefense = findInArray(attributes, "[gen character attribute] defense melee", succeeds).value;
-            returnAttributes.cWounds = findInArray(attributes, "[gen character attribute] wounds current", succeeds).value;
-            returnAttributes.tWounds = findInArray(attributes, "[gen character attribute] wounds threshold", succeeds).value;
-            returnAttributes.cStrain = findInArray(attributes, "[gen character attribute] strain current", succeeds).value;
-            returnAttributes.tStrain = findInArray(attributes, "[gen character attribute] strain threshold", succeeds).value;
-        } else
-        if (characterType(character) === STARWARS) {
-            returnAttributes.soak = findInArray(attributes, "[sw character attribute] soak", succeeds).value;
-            returnAttributes.rDefense = findInArray(attributes, "[sw character attribute] defense ranged", succeeds).value;
-            returnAttributes.mDefense = findInArray(attributes, "[sw character attribute] defense melee", succeeds).value;
-            returnAttributes.cWounds = findInArray(attributes, "[sw character attribute] wounds current", succeeds).value;
-            returnAttributes.tWounds = findInArray(attributes, "[sw character attribute] wounds threshold", succeeds).value;
-            returnAttributes.cStrain = findInArray(attributes, "[sw character attribute] strain current", succeeds).value;
-            returnAttributes.tStrain = findInArray(attributes, "[sw character attribute] strain threshold", succeeds).value;
-        }
+        returnAttributes.soak = findInArray(attributes, "[nds character attribute] soak", succeeds).value;
+        returnAttributes.rDefense = findInArray(attributes, "[nds character attribute] defense ranged", succeeds).value;
+        returnAttributes.mDefense = findInArray(attributes, "[nds character attribute] defense melee", succeeds).value;
+        returnAttributes.cWounds = findInArray(attributes, "[nds character attribute] wounds current", succeeds).value;
+        returnAttributes.tWounds = findInArray(attributes, "[nds character attribute] wounds threshold", succeeds).value;
+        returnAttributes.cStrain = findInArray(attributes, "[nds character attribute] strain current", succeeds).value;
+        returnAttributes.tStrain = findInArray(attributes, "[nds character attribute] strain threshold", succeeds).value;
         if (succeeds.successcode === 0) {
             return failure(returnAttributes);
         }
         return success(returnAttributes);
     }
-    sessionsJSON.motivation = function (character) {
-        // Duty, Morality, and Obligation are included in this function - I don't know where else to put them and they display in the same place
+    sessionsJSON.motivation = function (character) {// TODO Finish this
+        let details = character.details;
+        let config = character.configuration;
+        let returnDetails = { };
+
+        // get whether oblig, duty, etc. will be used
+        let returnConfig = {};
+        try {
+            returnConfig.useMotiv = true;// TODO fix this
+            returnConfig.useOblig = config.obligationEnabled;
+            returnConfig.useDuty = config.dutyEnabled;
+            returnConfig.useMoral = config.moralityEnabled;
+        }
+        catch {
+            let returnConfig = failure({
+                useMotiv : true,
+                useOblig : true,
+                useDuty : true,
+                useMoral : true
+            });
+        }
+        returnDetails.config = returnConfig;
+        // get those actual things, *regardless* of their use
+        // get motivation (desire/flaw/strength/fear)
+        let returnMotiv = {};
+        try {
+            let succeeds = { successcode:1 };
+            returnMotiv.desire = findInArray(details, "[nds character detail] desire", succeeds).value;
+            returnMotiv.fear = findInArray(details, "[nds character detail] fear", succeeds).value;
+            returnMotiv.strength = findInArray(details, "[nds character detail] strength", succeeds).value;
+            returnMotiv.flaw = findInArray(details, "[nds character detail] flaw", succeeds).value;
+            console.log(returnMotiv);
+            if (succeeds.successcode === 0) {
+                returnMotiv = failure(returnMotiv);
+            }
+            else {
+                returnMotiv = success(returnMotiv);
+            }
+        }
+        catch (error) {
+            console.log(error);
+            returnMotiv = failure({
+                desire:"(Desire Error)",
+                fear:"(Fear Error)",
+                strength:"(Strength Error)",
+                flaw:"(Flaw Error)"
+            });
+        }
+        returnDetails.motivation = returnMotiv;
+        // get obligation
+        let returnObligation = { successcode:1 };
+        // TODO implement obligation
+        returnDetails.obligation = returnObligation;
+        // get duty
+        let returnDuty = { successcode:1 };
+        // TODO implement duty
+        returnDetails.duty = returnDuty;
+        // get Morality
+        returnMorality = { successcode:1 };
+        // TODO implement morality
+        returnDetails.morality = returnMorality;
+
+        // return it all
+        returnDetails.successcode = returnConfig.successcode * returnMotiv.successcode * returnObligation.successcode * returnDuty.successcode * returnMorality.successcode;// if failure (0), returns 0, else returns 1^5. 
+        return returnDetails;
+
+        /* Old code:
         try {
             if (characterType(character) === GENESYS) {
-                let details = character.details;
                 let returnDetails = { };
                 let succeeds = { };
                 returnDetails.desire = findInArray(details, "[gen character detail] desire", succeeds).value;
@@ -246,6 +429,7 @@
             console.log(error);
             return failure({ });
         }
+        */
     }
 
     global.sessionsJSON = sessionsJSON;
