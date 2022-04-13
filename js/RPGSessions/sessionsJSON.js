@@ -24,18 +24,17 @@
     */
     sessionsJSON.characterType = function (character) {
         return GENESYS;
-        /*
-        if ("[game theme] generic" === character.configuration.gameTheme) {
+        if (/^[game theme] genesys/.exec(character.configuration.gameTheme)) {
             return GENESYS;
         } else
-        if ("[game theme] " === character.configuration.gameTheme) {// TODO add this theme name
+        if (/^[game theme] star wars/.exec(character.configuration.gameTheme)) {
             return STARWARS;
         } else {
             console.log("Invalid Game Type");
             return "None";
         }
-        */
     }
+
     let characterType = sessionsJSON.characterType;
     success = function (object) {
         object.successcode = 1;
@@ -63,8 +62,141 @@
         }
         return failure(succeeds);
     }
+    sessionsJSON.modifiers = function (character){
+        returnModifier = success({
+            soak:0,
+            tWounds:0,
+            cWounds:0,
+            tStrain:0,
+            cStrain:0,
+            defense:0,
+            mDefense:0,
+            rDefense:0,
+            brawn:0,
+            agility:0,
+            intellect:0,
+            cunning:0,
+            willpower:0,
+            presence:0
+        });
+        try {
+            let modifiers = new Array();
+            // check if automod
+            automod = character.configuration.automations;
+            // set list to mods
+            modifiers = character.modifiers;
+            // for armor
+            character.armor.forEach((armor) => {
+                // { if equiped, (for armor mods, add to list) (for soak/defense, if automod, add to soak mod) }
+                if (armor.equipped) {
+                    armor.modifiers.forEach((armormod) => {
+                        modifiers.concat(armormod);
+                    });
+                    if (automod) {
+                        // If multiple armors are equipped, only one soak should apply.
+                        // And that soak should be the higher one, hence the ? :
+                        returnModifier.soak = returnModifier.soak < armor.soak ? armor.soak : returnModifier.soak;
+                        returnModifier.defense = returnModifier.defense < armor.defense ? armor.defense : returnModifier.defense;
+                    }
+                }
+            });
+            // for weapon
+            character.weapons.forEach((weapon) => {
+                // {if equiped, (for weapon mods, add to list) }
+                if (weapon.equipped) {
+                    weapon.modifiers.forEach((weaponmod) => {
+                        modifiers.concat(weaponmod);
+                    });
+                }
+            });
+            // for equipment
+            character.equipment.forEach((item) => {
+                // {if carried, (for item mods, add to list)}
+                if (item.carrying) {
+                    item.modifiers.forEach((itemmod) => {
+                        modifiers.concat(itemmod);
+                    });
+                }
+            });
+            // for talents
+            character.talents.talents.forEach((talent) => {
+                if (talent.purchased) {
+                    talent.modifiers.forEach((talentmod) => {
+                        modifiers.concat(talentmod);
+                    });
+                }
+            });
+            // run through list
+            modifiers.forEach((modifier) => {
+                switch (modifier.type) {
+                    case "[nds character modifier type] narrative":
+                        //do nothing
+                        break;
+                    case "[nds character modifier type] attribute":
+                        //test for which attribute
+                        switch (modifier.attribute) {
+                            case "[nds character attribute] soak":
+                                returnModifier.soak += modifier.modifierAmount;
+                                break;
+                            case "[nds character attribute] wounds current":
+                                returnModifier.cWounds += modifier.modifierAmount;
+                                break;
+                            case "[nds character attribute] wounds threshold":
+                                returnModifier.tWounds += modifier.modifierAmount;
+                                break;
+                            case "[nds character attribute] strain current":
+                                returnModifier.cStrain += modifier.modifierAmount;
+                                break;
+                            case "[nds character attribute] strain threshold":
+                                returnModifier.tStrain += modifier.modifierAmount;
+                                break;
+                            case "[nds character attribute] defense melee":
+                                returnModifier.mDefense += modifier.modifierAmount;
+                                break;
+                            case "[nds character attribute] defense ranged":
+                                returnModifier.rDefense += modifier.modifierAmount;
+                                break;
+                        }
+                        break;
+                    case "[nds character modifier type] characteristic":
+                        switch (modifier.characteristic){
+                            case "[nds character characteristic] brawn":
+                                returnModifier.brawn += modifier.modifierAmount;
+                                break;
+                            case "[nds character characteristic] agility":
+                                returnModifier.agility += modifier.modifierAmount;
+                                break;
+                            case "[nds character characteristic] cunning":
+                                returnModifier.cunning += modifier.modifierAmount;
+                                break;
+                            case "[nds character characteristic] intellect":
+                                returnModifier.intellect += modifier.modifierAmount;
+                                break;
+                            case "[nds character characteristic] willpower":
+                                returnModifier.willpower += modifier.modifierAmount;
+                                break;
+                            case "[nds character characteristic] presence":
+                                returnModifier.presence += modifier.modifierAmount;
+                                break;
+                        }
+                        break;
+                    case "[nds character modifier type] skill":
+                        //do nothing
+                        break;
+                    case "[nds character modifier type] weapon":
+                        //do nothing
+                        break;
+                }
+            });
+            return returnModifier;
+        }
+        catch (error) {
+            console.log(error);
+            return failure({ });
+        }
+    }
     sessionsJSON.frontmatter = function (character) {// UPDATED
-        let returnFrontmatter = success({ successcode:1 });
+        let returnFrontmatter = success({ });
         try {
             succeeds = { successcode:1 };
             returnFrontmatter.id = character._id; 

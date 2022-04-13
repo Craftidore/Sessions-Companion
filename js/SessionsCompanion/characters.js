@@ -18,6 +18,7 @@
         }
         let character = { };
         character.type = sessionsJSON.characterType(charData);
+        let modifiers = sessionsJSON.modifiers(charData);
         let frontmatter = sessionsJSON.frontmatter(charData);
         logSuccess("Frontmatter", frontmatter);
         {
@@ -28,23 +29,23 @@
         let characteristics = sessionsJSON.characteristics(charData);
         logSuccess("Characteristics", characteristics);
         {
-            character.brawn = characteristics.brawn;
-            character.agility = characteristics.agility;
-            character.intellect = characteristics.intellect;
-            character.cunning = characteristics.cunning;
-            character.willpower = characteristics.willpower;
-            character.presence = characteristics.presence;
+            character.brawn = characteristics.brawn + modifiers.brawn;
+            character.agility = characteristics.agility + modifiers.agility;
+            character.intellect = characteristics.intellect + modifiers.intellect;
+            character.cunning = characteristics.cunning + modifiers.cunning;
+            character.willpower = characteristics.willpower + modifiers.willpower;
+            character.presence = characteristics.presence + modifiers.presence;
         }
         let derived = sessionsJSON.derived(charData);
         logSuccess("Derived", derived);
         {
-            character.soak = derived.soak;
-            character.rDefense = derived.rDefense;
-            character.mDefense = derived.mDefense;
-            character.cWounds = derived.cWounds;
-            character.tWounds = derived.tWounds;
-            character.cStrain = derived.cStrain;
-            character.tStrain = derived.tStrain;
+            character.soak = derived.soak + modifiers.soak;
+            character.rDefense = derived.rDefense + modifiers.rDefense + modifiers.defense;
+            character.mDefense = derived.mDefense + modifiers.mDefense + modifiers.defense;
+            character.cWounds = derived.cWounds + modifiers.cWounds;
+            character.tWounds = derived.tWounds + modifiers.tWounds;
+            character.cStrain = derived.cStrain + modifiers.cStrain;
+            character.tStrain = derived.tStrain + modifiers.tStrain;
         }
         //BEGIN motivations
         let motivation;
