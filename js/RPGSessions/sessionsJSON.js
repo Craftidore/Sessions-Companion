@@ -24,18 +24,17 @@
     */
     sessionsJSON.characterType = function (character) {
         return GENESYS;
-        /*
-        if ("[game theme] generic" === character.configuration.gameTheme) {
+        if (/^[game theme] genesys/.exec(character.configuration.gameTheme)) {
             return GENESYS;
         } else
-        if ("[game theme] " === character.configuration.gameTheme) {// TODO add this theme name
+        if (/^[game theme] star wars/.exec(character.configuration.gameTheme)) {
             return STARWARS;
         } else {
             console.log("Invalid Game Type");
             return "None";
         }
-        */
     }
+
     let characterType = sessionsJSON.characterType;
     success = function (object) {
         object.successcode = 1;
@@ -63,8 +62,40 @@
         }
         return failure(succeeds);
     }
+    sessionsJSON.modifiers = function (character){
+        returnModifier = success({ });
+        try {
+            let modifiers = new Array();
+            // check if automod
+            automod = character.configuration.automations;
+            // set list to mods
+            modifiers = character.modifiers;
+            // for armor
+            character.armor.forEach((armor) => {
+                // { if equiped, (for armor mods, add to list) (for soak/defense, if automod, add to soak mod) }
+                if (armor.equipped) {
+                    armor.modifiers.forEach((armormod) => {
+                        modifiers.concat(armormod);
+                    });
+                }
+                if (automod) {
+                    returnModifier.soak
+                }
+            });
+            // for weapon
+            // {if equiped, (for weapon mods, add to list) }
+            // for equipment
+            // {if carried, (for item mods, add to list)}
+            // run through list
+
+        }
+        catch (error) {
+            console.log(error);
+            return failure({ });
+        }
+    }
     sessionsJSON.frontmatter = function (character) {// UPDATED
-        let returnFrontmatter = success({ successcode:1 });
+        let returnFrontmatter = success({ });
         try {
             succeeds = { successcode:1 };
             returnFrontmatter.id = character._id; 
