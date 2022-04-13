@@ -80,22 +80,6 @@
             presence:0
         });
         try {
-<<<<<<< HEAD
-            if (characterType(character) === GENESYS) {
-                returnFrontmatter.name = character.name;
-                returnFrontmatter.id = character._id;
-                returnFrontmatter.archetype = findInArray(character.details, "[gen character detail] archetype", returnFrontmatter).value;
-                if (returnFrontmatter.name === undefined) {// Code removed because then failure(returnFrontmatter) would be applied already // || returnFrontmatter.successcode === 0) {
-                    failure(returnFrontmatter);
-                }
-            } else
-            if (characterType(character) === STARWARS) {
-                returnFrontmatter.name = character.name;
-                returnFrontmatter.id = character._id;
-                returnFrontmatter.archetype = findInArray(character.details, "[gen character detail] archetype", returnFrontmatter).value;
-                if (returnFrontmatter.name === undefined) {// Code removed because then failure(returnFrontmatter) would be applied already // || returnFrontmatter.successcode === 0) {
-                    failure(returnFrontmatter);
-=======
             let modifiers = new Array();
             // check if automod
             automod = character.configuration.automations;
@@ -123,7 +107,6 @@
                     weapon.modifiers.forEach((weaponmod) => {
                         modifiers.concat(weaponmod);
                     });
->>>>>>> Modifiers
                 }
             });
             // for equipment

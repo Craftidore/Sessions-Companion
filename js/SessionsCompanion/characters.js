@@ -29,21 +29,12 @@
         let characteristics = sessionsJSON.characteristics(charData);
         logSuccess("Characteristics", characteristics);
         {
-<<<<<<< HEAD
-            character.brawn = characteristics.brawn;
-            character.agility = characteristics.agility;
-            character.intellect = characteristics.intellect;
-            character.cunning = characteristics.cunning;
-            character.willpower = characteristics.willpower;
-            character.presence = characteristics.presence;
-=======
             character.brawn = characteristics.brawn + modifiers.brawn;
             character.agility = characteristics.agility + modifiers.agility;
             character.intellect = characteristics.intellect + modifiers.intellect;
             character.cunning = characteristics.cunning + modifiers.cunning;
             character.willpower = characteristics.willpower + modifiers.willpower;
             character.presence = characteristics.presence + modifiers.presence;
->>>>>>> Modifiers
         }
         let derived = sessionsJSON.derived(charData);
         logSuccess("Derived", derived);
@@ -68,17 +59,10 @@
             logSuccess("Genesys Motivation", motivation);
             console.log(motivation);
             character.motivation = { };
-<<<<<<< HEAD
-            character.motivation.desire = marked.parse(motivation.desire);
-            character.motivation.fear = marked.parse(motivation.fear);
-            character.motivation.strength = marked.parse(motivation.strength);
-            character.motivation.flaw = marked.parse(motivation.flaw);
-=======
             character.motivation.desire = marked.parse(motivation.motivation.desire);
             character.motivation.fear = marked.parse(motivation.motivation.fear);
             character.motivation.strength = marked.parse(motivation.motivation.strength);
             character.motivation.flaw = marked.parse(motivation.motivation.flaw);
->>>>>>> Modifiers
         } else 
         if (character.type === STARWARS) {
             // This means one to three motivations
