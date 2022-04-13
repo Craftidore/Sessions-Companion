@@ -63,7 +63,22 @@
         return failure(succeeds);
     }
     sessionsJSON.modifiers = function (character){
-        returnModifier = success({ });
+        returnModifier = success({
+            soak:0,
+            tWounds:0,
+            cWounds:0,
+            tStrain:0,
+            cStrain:0,
+            defense:0,
+            mDefense:0,
+            rDefense:0,
+            brawn:0,
+            agility:0,
+            intellect:0,
+            cunning:0,
+            willpower:0,
+            presence:0
+        });
         try {
             let modifiers = new Array();
             // check if automod
@@ -77,17 +92,103 @@
                     armor.modifiers.forEach((armormod) => {
                         modifiers.concat(armormod);
                     });
-                }
-                if (automod) {
-                    returnModifier.soak
+                    if (automod) {
+                        // If multiple armors are equipped, only one soak should apply.
+                        // And that soak should be the higher one, hence the ? :
+                        returnModifier.soak = returnModifier.soak < armor.soak ? armor.soak : returnModifier.soak;
+                        returnModifier.defense = returnModifier.defense < armor.defense ? armor.defense : returnModifier.defense;
+                    }
                 }
             });
             // for weapon
-            // {if equiped, (for weapon mods, add to list) }
+            character.weapons.forEach((weapon) => {
+                // {if equiped, (for weapon mods, add to list) }
+                if (weapon.equipped) {
+                    weapon.modifiers.forEach((weaponmod) => {
+                        modifiers.concat(weaponmod);
+                    });
+                }
+            });
             // for equipment
-            // {if carried, (for item mods, add to list)}
+            character.equipment.forEach((item) => {
+                // {if carried, (for item mods, add to list)}
+                if (item.carrying) {
+                    item.modifiers.forEach((itemmod) => {
+                        modifiers.concat(itemmod);
+                    });
+                }
+            });
+            // for talents
+            character.talents.talents.forEach((talent) => {
+                if (talent.purchased) {
+                    talent.modifiers.forEach((talentmod) => {
+                        modifiers.concat(talentmod);
+                    });
+                }
+            });
             // run through list
-
+            modifiers.forEach((modifier) => {
+                switch (modifier.type) {
+                    case "[nds character modifier type] narrative":
+                        //do nothing
+                        break;
+                    case "[nds character modifier type] attribute":
+                        //test for which attribute
+                        switch (modifier.attribute) {
+                            case "[nds character attribute] soak":
+                                returnModifier.soak += modifier.modifierAmount;
+                                break;
+                            case "[nds character attribute] wounds current":
+                                returnModifier.cWounds += modifier.modifierAmount;
+                                break;
+                            case "[nds character attribute] wounds threshold":
+                                returnModifier.tWounds += modifier.modifierAmount;
+                                break;
+                            case "[nds character attribute] strain current":
+                                returnModifier.cStrain += modifier.modifierAmount;
+                                break;
+                            case "[nds character attribute] strain threshold":
+                                returnModifier.tStrain += modifier.modifierAmount;
+                                break;
+                            case "[nds character attribute] defense melee":
+                                returnModifier.mDefense += modifier.modifierAmount;
+                                break;
+                            case "[nds character attribute] defense ranged":
+                                returnModifier.rDefense += modifier.modifierAmount;
+                                break;
+                        }
+                        break;
+                    case "[nds character modifier type] characteristic":
+                        switch (modifier.characteristic){
+                            case "[nds character characteristic] brawn":
+                                returnModifier.brawn += modifier.modifierAmount;
+                                break;
+                            case "[nds character characteristic] agility":
+                                returnModifier.agility += modifier.modifierAmount;
+                                break;
+                            case "[nds character characteristic] cunning":
+                                returnModifier.cunning += modifier.modifierAmount;
+                                break;
+                            case "[nds character characteristic] intellect":
+                                returnModifier.intellect += modifier.modifierAmount;
+                                break;
+                            case "[nds character characteristic] willpower":
+                                returnModifier.willpower += modifier.modifierAmount;
+                                break;
+                            case "[nds character characteristic] presence":
+                                returnModifier.presence += modifier.modifierAmount;
+                                break;
+                        }
+                        break;
+                    case "[nds character modifier type] skill":
+                        //do nothing
+                        break;
+                    case "[nds character modifier type] weapon":
+                        //do nothing
+                        break;
+                }
+            });
+            return returnModifier;
         }
         catch (error) {
             console.log(error);
