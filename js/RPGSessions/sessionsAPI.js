@@ -20,7 +20,7 @@
         // in any case, removing any spare slashes, just in case there was a trailing slash
         let charactergen = /^https:\/\/app\.rpgsessions\.com\/char\/ffg-gen\/player\//ig;
         let charactersw = /^https:\/\/app\.rpgsessions\.com\/char\/ffg-sw\/player\//ig;
-        let characternds = /^https:\/\/app\.rpgsessions\.com\/char\/nds\/player\//ig;
+        let characternds = /^https:\/\/app\.rpgsessions\.com\/char\/nds\//ig;
         let characterfromtable = /^https:\/\/app\.rpgsessions\.com\/char\//ig;
         let characterfromoldapi = /^https:\/\/api\.rpgsessions\.com\/character2\//ig;
         let characterfromapi = /^https:\/\/api\.rpgsessions\.com\/character\//ig;
@@ -59,7 +59,7 @@
             console.log("from table");
             return noSlashes(link.replace(table, ""));
         } else
-        if (hexLength24.exec(link, link)){// this doesn't do what I want :(
+        if (hexLength24.exec(link)){// this doesn't do what I want :(
             console.log("from hex id");
             return link;
         } else {
