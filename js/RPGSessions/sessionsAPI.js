@@ -59,7 +59,7 @@
             console.log("from table");
             return noSlashes(link.replace(table, ""));
         } else
-        if (hexLength24.exec(link, link)){// this doesn't do what I want :(
+        if (hexLength24.exec(link)){// this doesn't do what I want :(
             console.log("from hex id");
             return link;
         } else {
