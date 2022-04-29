@@ -38,21 +38,38 @@ var calcURLVars = function () {
     let vars = new URLSearchParams(varStr);
     if (vars.has('g')) {
         let gametableStr = vars.get('g')
-        let gametables = gametableStr.split(',');
+        let gametables = getStrArray(gametableStr);
         gametables.forEach(gt => {
             sessionsAPI.addGameTable(gt);
         });
     }
     if (vars.has('c')) {
         let charsStr = vars.get('c');
-        let chars = charsStr.split(',');
+        let chars = getStrArray(charsStr);
         chars.forEach(char => {
             sessionsAPI.addCharacter(char);
         });
     }
 }
-var updateURLVars = function (name, date) {
+var updateURLVars = function (name, newVar) {
     let urlParams = new URLSearchParams(location.search);
-    urlParams.set(name, date);
-    location.search = urlParams;
+    currentStr = urlParams.get(name);
+    currentArray = getStrArray(currentStr);
+    currentArray.push(newVar);
+    newStr = currentArray.join(',');
+    urlParams.set(name, newStr);
+    location.search = urlParams.toString();
+}
+
+var getStrArray = function (str) {
+    if (str === null) {
+        return[];
+    }
+    let items = str.split(',');
+    if (items[0] === '') {
+        return [];
+    }
+    else {
+        return items;
+    }
 }
