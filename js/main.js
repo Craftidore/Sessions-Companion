@@ -58,10 +58,13 @@ var updateURLVars = function (name, newVar) {
     currentArray.push(newVar);
     newStr = currentArray.join(',');
     urlParams.set(name, newStr);
-    location.search = urlParams;
+    location.search = urlParams.toString();
 }
 
 var getStrArray = function (str) {
+    if (str === null) {
+        return[];
+    }
     let items = str.split(',');
     if (items[0] === '') {
         return [];
